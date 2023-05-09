@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;1,100&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea{
+    resize: none;
+}
+.hidden{
+    display: none;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.fa-crear{
+    color: green;
+    font-size: 25px;
+}
+.contenedor-busqueda-creacion{
+    display: grid;
+}
+.container-titulos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.contenedor-busqueda-creacion .ocultar-formulario{
+    display: none;
+}
+.buscador input{
+    padding: 10px 5px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 10px 50px 37px rgba(0,0,0,0.1);
+}
+.formulario-incidente{
+    display: grid;
+    
+    padding: 10px 10px;
+    margin: 30px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 50px 37px rgba(0,0,0,0.1);
+}
+.formulario-incidente label{
+    margin: 5px;
+}
+.formulario-incidente input,
+.formulario-incidente select,
+.formulario-incidente textarea{
+    padding: 10px 5px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.formulario-incidente button{
+    padding: 10px;
+    background-color: rgba(10, 1, 12, 0.333);
+    border: none;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    color: whitesmoke;
+}
+.formulario-incidente button:hover{
+    cursor: pointer;
+}
+.container-derecha .buscador{
+    margin-bottom: 30px;
+    
+}
+.listaIncidencias{
+    box-shadow: 0px 10px 50px 37px rgba(0,0,0,0.1);
+    padding: 10px 10px;
+    text-align: center;
+    overflow-y: auto;
+    max-height: 500px;
+    border-radius: 10px;
+}
+.tabla-incidencias{
+    font-size: 14px;
+}
+.container-derecha .crear-incidencia button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.tabla-incidencias tr td:last-child{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.tabla-incidencias td{
+    border-bottom: 1px solid black;
+    padding: 10px 5px;
+}
+.fila-titulos{
+    position: sticky;
+    left: 0;
+    padding: 10px;
+    top: 0;
+    z-index: 1;
+}
+.fila-titulos th{
+    background-color: black;
+    color: whitesmoke;
+    padding: 5px 5px ;
+}
+.fila-datos {
+
+}
+.fila-datos .descripcion-fila{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fila-datos button{
+    border: none;
+    cursor: pointer;
+    background-color: none;
+}
+.fila-datos  .boton-editar{
+    background-color: yellow;
+}
+
+/**Aqui van los media queries **/
+
+/**Para telefonos**/
+
+@media (max-width: 768px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contenedor-busqueda-creacion .container-titulos p{
+       padding-left: 10px;
+    }
+    .formulario-incidente{
+        display: none;
+    }
+    .container-derecha{
+        width: 100%;
+        margin: auto;
+    }
+
+    .container-derecha .buscador{
+        width: 80%;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+    .container-derecha .crear-incidencia{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .container-derecha .crear-incidencia button{
+        width: 80;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: black;
+        border-radius: 10px;
+        padding: 10px;
+        color: whitesmoke;
+    }
+    .fa-crear{
+        padding-left: 10px;
+    }
+
+   
+    .container-derecha .listaIncidencias{
+        max-width: 90%;
+        margin: auto;
+    }
+    .container-derecha .tabla-incidencias{
+        max-width: 100%;
+        margin: auto;
+    }
+    .container-derecha .tabla-incidencias tr th:nth-child(2),
+    .container-derecha .tabla-incidencias tr th:nth-child(4),
+    .container-derecha .tabla-incidencias tr td:nth-child(2),
+    .container-derecha .tabla-incidencias tr td:nth-child(4),
+    .container-derecha .tabla-incidencias tr th:nth-child(6),
+    .container-derecha .tabla-incidencias tr th:nth-child(5),
+    .container-derecha .tabla-incidencias tr td:nth-child(6),
+    .container-derecha .tabla-incidencias tr td:nth-child(5){
+        display: none;
+    }
+   
+    .container-derecha .tabla-incidencias tr td:last-child,
+
+    .tabla-incidencias .submit-editar{
+        background-color: #ccc;
+        color: white;
+    }
+    .tabla-incidencias .submit-editar i{
+        color: white;
+    }
+   
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .contenedor-busqueda-creacion .container-titulos p{
+        padding-left: 20px;
+    }
+    .container .formulario-incidente{
+        display: none;
+    }
+    .container-derecha{
+        width: 90%;
+    }
+    .container-derecha .crear-incidencia{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .container-derecha .tabla-incidencias{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .container-derecha .tabla-incidencias tr th:nth-child(2),
+    .container-derecha .tabla-incidencias tr td:nth-child(2){
+        display: none;
+    }
+    .container-derecha .tabla-incidencias tr td:last-child{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
